@@ -36,7 +36,8 @@ public class HomeController {
 	public String register(@ModelAttribute("user")
 					User user, Model model) {
 		model.addAttribute("user", user);
-		userRepository.save(user);
+		user = userRepository.save(user);
+		System.out.println(user.getId());
 		return "register";
 	}
 }
