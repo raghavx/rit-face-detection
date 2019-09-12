@@ -1,11 +1,34 @@
-1. Create an html page for file upload 
-2. Bind FileUpload with the HTML form
-3. Create a Controller for file upload 
-	- Get mapping
-	- Post mapping 
-4. Create RestController for file upload 
-	- Get mapping
-	- Post mapping 
-5. Once file is uploaded print the name of
-	file
-	
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css"></link> -->
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous"></link>
+
+
+</head>
+<body class="container">
+	<h1>
+		Upload Image -  Face <span class="badge badge-secondary"> detection
+			Application</span>
+	</h1>
+
+	<form th:object="${fileUpload}" th:action="@{/upload}" 
+		enctype="multipart/form-data"	method="post">
+		<div class="form-group">
+			<label class="form-label">File Upload</label> <input
+				th:field="*{file}" class="form-control" type="file"></input>
+
+		</div>
+
+		<div class="pull-left">
+			<button class="btn btn-primary" type="submit">Submit</button>
+		</div>
+	</form>
+
+</body>
+</html>
