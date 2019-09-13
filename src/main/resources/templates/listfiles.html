@@ -8,7 +8,9 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous"></link>
-
+<!-- 
+	1, 2, 3, 4, 6, 12
+ -->
 
 </head>
 <body class="container">
@@ -16,18 +18,29 @@
 		List - Face <span class="badge badge-secondary"> detection
 			Application</span>
 	</h1>
-
-	<ul>
-		<li th:text="${allFiles}">Read the data from Database</li>
-		<li>Create rest controller with persistence </li>
-		<li>Display the uploaded images in html file</li>
-		<li>For layout use BootStrap</li>
-		<li>Create 3 or 4 colums per row</li>
-	</ul>
 	
-	<div class="container">
-		<img alt="No Image" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></img>
+
+
+	<div class="row" th:each="fd : ${allFiles}">
+		<div class="col-sm">
+			<img alt="No Image" 
+				width="128px"
+				th:src="${fd.path}"
+			src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></img>
+			<p th:text="${fd.name}"></p>
+		</div>
+		<!-- <div class="col-sm">
+			<img alt="No Image"
+			width="128px"
+			 src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></img>
+		</div>
+		<div class="col-sm">
+			<img alt="No Image" 
+			width="128px"
+			src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></img>
+		</div> -->
 	</div>
+	
 
 </body>
 </html>
