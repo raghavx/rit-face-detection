@@ -25,7 +25,7 @@
 		<div class="col-sm">
 			<img alt="No Image" 
 				width="128px"
-				th:src="${fd.path}"
+				th:src="@{/images/__${fd.name}__}"
 			src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"></img>
 			<p th:text="${fd.name}"></p>
 		</div>

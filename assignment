@@ -1,0 +1,8 @@
+Create image processing service 
+Declare a method 
+	- Process
+	- Method should return byte[]
+	- Input should be file path 
+Create Implementation and Interface 
+for the service 
+
